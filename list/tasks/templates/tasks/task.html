@@ -1,0 +1,20 @@
+<!-- main page -->
+
+<h2 style="color:red ">list of tasks</h2>
+<!-- POST method and action is to use it in our view-->
+
+<form method = "POST" action = "/">
+    {%csrf_token%}
+    {{form.title}}
+    <input type="submit" name="complete Task">
+</form>
+
+<!-- this is our list, task is the variable you can find in our index view in views.py -->
+{%for tak in task%}
+<div>
+    <a href="{% url 'delete' tak.id %}">Delete</a>
+    <a href="{% url 'edit' tak.id %}">Edit</a>
+    <!-- '{{ forloop.counter }}' is a way to count integer in our list -->
+    <p>{{ forloop.counter }} ) {{ tak }} </p>
+</div>
+{% endfor %}

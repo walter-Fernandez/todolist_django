@@ -1,0 +1,11 @@
+<!-- deleting page -->
+
+<h2 style = color:blue> Are you sure you want to delete it?</h2>
+<!-- POST method and action is to use it in our view-->
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.title}}
+    <input type="submit" name = "delete Task">
+</form>
+<!-- return link goes back to our main page 'list' is the name you can see in our url tasks -->
+<a href="{% url 'list' %}">return</a>

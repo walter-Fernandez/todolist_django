@@ -1,0 +1,11 @@
+<!-- edit page -->
+
+<h2 style="color: green">Edit your Task</h2>
+<!-- POST method and action is to use it in our view-->
+<form method = "POST" action="">
+    {% csrf_token %}
+    {{form.title}}
+    <input type="submit" name="edit Task">
+</form>
+<!-- return link goes back to our main page 'list' is the name you can see in our url tasks -->
+<a href="{% url 'list' %}">return</a>
